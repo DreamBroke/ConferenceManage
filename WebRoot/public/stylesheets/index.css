@@ -1,0 +1,15 @@
+.breadcrumbs-v1.img-index{
+    background: url("../images/bg.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    padding-top: 150px;
+}
+
+.breadcrumbs-v1 h1, .pull-center {
+    float: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 45px;
+}

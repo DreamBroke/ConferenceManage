@@ -1,0 +1,321 @@
+/* Add here all your css styles (customizations) */
+* {
+  font-family: "Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu,'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu,"Open Sans", Arial, sans-serif;
+}
+
+.revolution-ch1 {
+    font-family: "Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu,"Open Sans", Arial, sans-serif;
+}
+
+.navbar-brand {
+    /* padding: 0px; */
+}
+
+.bg-color-light-siid {
+  background-color: #F1E1E1;
+}
+.blog-topbar {
+  background: rgb(0, 69, 109);
+}
+.header-v8 {
+  background: url(../images/bg1.jpg) repeat-x;
+}
+.header-v8 .navbar-nav > li > a {
+  color: #f0f2f3 !important;
+}
+.header-v8 .navbar-nav > .active > a, 
+.header-v8 .navbar-nav > .active > a:hover,
+.header-v8 .navbar-nav > li > a:hover, 
+.header-v8 .navbar-nav > li > a:focus {
+  color: #000000 !important;
+}
+.header-v8 .dropdown-menu {
+  min-width: 130px;
+  padding: 0px;
+}
+	.header-v8 .dropdown-menu .active > a,
+	.header-v8 .dropdown-menu li > a:hover {
+		background: #eee !important;
+	}
+  .header-v8 .dropdown-submenu > .dropdown-menu {
+    top: -5px;
+  }
+
+.content-md {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.footer-v1 .footer {
+  background-color: rgb(0, 62, 109);
+}
+.footer-v1 .footer hr {
+  border-color: #f0f2f3
+}
+.footer-v8 .footer .column-one span {
+	display: inline-block;
+}
+.footer-v8 .footer .column-one span+p {
+	display: inline-block;
+}
+
+.footer .headline h2 {
+  border-bottom-color: #ccc;
+}
+
+.revolution-mch-1 h1,
+.revolution-mch-1 h2,
+.revolution-mch-1 h3,
+.revolution-mch-1 h4,
+.revolution-mch-1 h5,
+.revolution-mch-1 h6,
+.revolution-mch-1 p {
+  color: #ddd;
+}
+
+a.promo-video-icon-wrap.color-dark:hover {
+  background: #942222;
+}
+.slider-container {
+  background: #333;
+}
+.tab-news .nav-tabs {
+	border: none;
+	background: none;
+	text-align: left;
+  padding-top: 60px;
+}
+.tab-news .nav-tabs li {
+	display: inline-block;
+	float: none;
+	margin: 0px 0px;
+  font-size: 20px;
+
+  border-left: 1px solid #f0f2f3;
+  padding-left: 3px;
+}
+.tab-news .nav-tabs li:first-child {
+  border-left: none;
+}
+.tab-news .nav-tabs li>a {
+  color: #b0b2b3;
+    padding-top: 0px;
+  padding-bottom: 0px;
+  margin-right: 0px;
+  border-right: 0px;
+}
+.tab-news .nav-tabs li a:hover,
+.tab-news .nav-tabs li.active a,
+.tab-news .nav-tabs li a.active,
+.tab-news .nav-tabs li.active a.active {
+  color: #f0f2f3;
+  background: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-top: none;
+  border-right: 0px none;
+  border-left: none;
+}
+.tab-news .tab-content {
+  border: none;
+  color: #f0f2f3;
+}
+.tab-news .tab-content a {
+  color: #f0f2f3;
+}
+.tab-news .tab-content ul li {
+  border-bottom: 1px dashed #b0b2b3;
+}
+.tab-news .tab-content ul li a {
+  font-size: 16px;
+  word-break:keep-all;/* 不换行 */
+  overflow:hidden;;/* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow:ellipsis;;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+  white-space:nowrap;/* 不换行 */
+  width:100%;
+  color: #b0b2b3;
+}
+.tab-news .tab-content ul li a:hover {
+  text-decoration: none;
+  color: #f0f2f3;
+}
+
+.about-us .img-circle {
+  background: #ddd
+}
+
+.service:hover i {
+	color: #a62c30;
+  font-size: 38px;
+}
+
+.footer-v1 .link-list li {
+  border-top: 1px dashed #b0b2b3;
+}
+.footer-v1 .footer a {
+  color: #f0f2f3;
+}
+
+.breadcrumbs-v1.img-career {
+  background: url("../images/siid/career/1.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  padding-top: 300px;
+}
+.breadcrumbs-v1.img-trainees {
+  background: url("../images/siid/trainees/head.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 419px;
+  /*padding-top: 300px;*/
+}
+.breadcrumbs-v1.img-about-us {
+  background: url("../images/siid/aboutus/1.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  padding-top: 400px;
+}
+
+.breadcrumbs-v1.img-insight {
+  background: url("../images/siid/insight/0.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  padding-top: 400px;
+}
+
+.breadcrumbs-v1.img-salotto {
+  background: url("../images/siid/salotto/0.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  padding-top: 400px;
+}
+
+.breadcrumbs-v1.img-career h1 {
+  background: rgba(148, 34, 34, 0.4);
+  padding: 60px;
+}
+.breadcrumbs-v1.img-about-us div {
+  background: rgba(148, 34, 34, 0.4);
+  padding: 10px 20px;
+}
+.breadcrumbs-v1.img-about-us h1 {
+  display: inline-block;
+  font-size: 45px;
+}
+.breadcrumbs-v1.img-about-us h2 {
+  display: inline-block;
+  font-size: 35px;
+  padding-left: 30px;
+  color: #b0b2b3;
+}
+.breadcrumbs-v1.img-about-us div:after{
+  clear: both;
+  content: "";
+  display: block;
+}
+.intro-rows {
+  /*background-color: #f0ece8;*/
+  padding-bottom: 40px;
+}
+.intro-rows>div {
+  background-color: #fff;
+}
+.intro-rows>div>div {
+  position: relative;
+}
+.intro-rows>div>div:nth-child(even) {
+  background-color: #f7f7f7;
+}
+.intro-rows>div>div>a {
+  position: absolute;
+  bottom:0;
+  right: 0;
+}
+.intro-rows>div>div>div:first-child {
+  padding:0;
+}
+.intro-rows>div>div:hover {
+  background-color:#333;
+}
+.intro-rows>div>div:hover h1 {
+  color: #f0f2f3;
+}
+.intro-rows>div>div:hover h3 {
+  color: #f0f2f3;
+}
+
+.trainee-voice-block .row div {
+    padding: 0;
+}
+.trainee-voice-block .row .voice {
+  padding: 20px;
+}
+.trainee-voice-block h1 {
+  color: #f0f2f3;
+  font-size: 80px;
+  font-weight: bold;
+  margin-left: -40px;
+  margin-bottom: -20px;
+  padding-top: 10px;
+}
+.trainee-voice-block h3 {
+  color: #f0f2f3;
+}
+.trainee-voice-block h3 i {
+  font-size: 60px;
+}
+.trainee-voice-block img {
+    width: 100%;
+}
+.col-height {
+    height: 100%;
+}
+.trainee-voice-block>.row>div:after {
+  content:"   ";
+  display:block;
+  visibility: hidden;
+  height:0px;
+  clear:both;
+}
+.trainee-voice-block:after {
+  clear: both;
+}
+.trainee-plan-list {
+  padding: 20px;
+  margin-top: 20px;
+}
+.trainee-plan-list dt {
+  font-size: 18px;
+  float: left;
+  margin-right: 10px;
+}
+.trainee-plan-list dd {
+  font-size: 18px;
+  clear-after: left;
+  margin-bottom: 10px;
+}
+.breadcrumbs-v1.img-innovation {
+  background: url("../images/siid/innovation/1.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  padding-top: 300px;
+}
+.breadcrumbs-v1.img-innovation h1 {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 60px;
+}
+
+a.no-border:hover{
+  text-decoration: none;
+  color: #a62c30;
+}
+
