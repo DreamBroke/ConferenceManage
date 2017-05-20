@@ -1,3 +1,5 @@
+<%@page import="dao.AuthorDAO"%>
+<%@page import="models.Author"%>
 <%@page import="dao.RealmDao"%>
 <%@page import="dao.DissertationDAO"%>
 <%@page import="models.Dissertation"%>
@@ -127,7 +129,7 @@ select.form-control {
 										Dissertation dis = DissertationDAO.getDissertationByNo(request
 													.getParameter("dis_no"));
 									%>
-									<form action="../ModifyRep" method="POST" id="form">
+									<form action="" method="POST" id="form">
 										<div class="row">
 											<div class="col-md-5">
 												<div class="form-group">
@@ -176,6 +178,78 @@ select.form-control {
 									</form>
 								</div>
 							</div>
+							<div class="card">
+								<div class="header">
+									<h4 class="title">作者管理</h4>
+									<p style="height: 38px;margin-bottom: 0;"><a class="btn btn-info" style="float: right;display:inline-block;" href="addauthor.jsp?dis_no=<%=request.getParameter("dis_no")%>">增加</a></p>
+								</div>
+								<div class="content">
+								<%
+									ArrayList<Author> al = AuthorDAO.getAuthorByDissertation(request.getParameter("dis_no"));
+									for(Author aut : al){
+								%>
+								
+									<form action="" method="POST" id="form2">
+										<input type="hidden" value="<%=request.getParameter("dis_no")%>" name="dis_no">
+										<div class="row">
+											<div class="col-md-2">
+												<div class="form-group">
+													<label>姓名</label> <input type="text" value="<%=aut.getAut_name() %>"
+														class="form-control border-input" placeholder="姓名"
+														name="name">
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label>类别</label> <select class="form-control"
+														id="category" name="category">
+														<option value="第一作者" <%if(aut.getAut_category().equals("第一作者")){ %> selected <%}%>>第一作者</option>
+														<option value="第二作者" <%if(aut.getAut_category().equals("第二作者")){ %> selected <%}%>>第二作者</option>
+														<option value="第三作者" <%if(aut.getAut_category().equals("第三作者")){ %> selected <%}%>>第三作者</option>
+														<option value="第四作者" <%if(aut.getAut_category().equals("第四作者")){ %> selected <%}%>>第四作者</option>
+														<option value="第五作者" <%if(aut.getAut_category().equals("第五作者")){ %> selected <%}%>>第五作者</option>
+														<option value="第六作者" <%if(aut.getAut_category().equals("第六作者")){ %> selected <%}%>>第六作者</option>
+														<option value="第七作者" <%if(aut.getAut_category().equals("第七作者")){ %> selected <%}%>>第七作者</option>
+														<option value="第八作者" <%if(aut.getAut_category().equals("第八作者")){ %> selected <%}%>>第八作者</option>
+														<option value="第九作者" <%if(aut.getAut_category().equals("第九作者")){ %> selected <%}%>>第九作者</option>
+														<option value="第十作者" <%if(aut.getAut_category().equals("第十作者")){ %> selected <%}%>>第十作者</option>
+														<option value="通讯作者" <%if(aut.getAut_category().equals("通讯作者")){ %> selected <%}%>>通讯作者</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label>联系电话</label> <input type="text" value="<%=aut.getAut_tel()%>"
+														class="form-control border-input" placeholder="联系电话"
+														name="tel">
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label>电子邮箱</label> <input type="text" value="<%=aut.getAut_email() %>"
+														class="form-control border-input" placeholder="电子邮箱"
+														name="email">
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label>工作单位</label> <input type="text" value="<%=aut.getAut_company() %>"
+														class="form-control border-input" placeholder="工作单位"
+														name="company">
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group" style="margin-top: 26px;">
+													<button class="btn btn-info" type="submit">确认</button>
+													<a class="btn btn-danger" href="DeleteAuthor?aut_no=<%=aut.getAut_no()%>&dis_no=<%=request.getParameter("dis_no")%>" onclick="return deleteAut();">删除</a>
+													<%-- <a class="btn btn-danger" href="DeleteAuthor?aut_no=<%=i%>&dis_no=<%=request.getParameter("dis_no")%>">删除</a> --%>
+												</div>
+											</div>
+										</div>
+									</form>
+									<%} %>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -184,14 +258,14 @@ select.form-control {
 
 
 		<%
-			String mess = (String) session.getAttribute("message");
-				if ("success".equals(mess)) {
+				String mess = (String) request.getAttribute("message_author");
+				if (mess != null && !mess.equals("")) {
 		%>
 		<script type="text/javascript">
-			alert("修改成功！");
+			alert("<%=mess%>");
+			window.location.href="modifydissertation.jsp?dis_no=<%=request.getParameter("dis_no")%>";
 		</script>
 		<%
-			session.removeAttribute("message");
 				}
 		%>
 
@@ -228,120 +302,16 @@ select.form-control {
 <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 <script src="../public/javascripts/paper-dashboard.js"></script>
 <script
-	src="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
-<script
 	src="https://cdn.bootcss.com/bootstrap-fileinput/4.3.9/js/fileinput.js"></script>
 <script
 	src="https://cdn.bootcss.com/bootstrap-fileinput/4.3.9/js/locales/zh.js"></script>
 <script type="text/javascript">
+function deleteAut(){
+	var flag = confirm("确定删除吗？");
+	return flag;
+}
+
 $('#file').fileinput({language: 'zh',allowedFileExtensions:["doc", "pdf", "docx"]});
-	$(document)
-			.ready(
-					function() {
-						/**
-						 * 下面是进行插件初始化
-						 * 你只需传入相应的键值对
-						 * */
-						$('#form')
-								.bootstrapValidator(
-										{
-											message : 'This value is not valid',
-											feedbackIcons : {/*输入框不同状态，显示图片的样式*/
-												valid : 'glyphicon glyphicon-ok',
-												invalid : 'glyphicon glyphicon-remove',
-												validating : 'glyphicon glyphicon-refresh'
-											},
-											fields : {/*验证*/
-												email : {
-													validators : {
-														notEmpty : {
-															message : '电子邮箱地址不能为空'
-														},
-														emailAddress : {
-															message : '请输入一个有效的邮箱地址'
-														}
-													}
-												},
-												name : {
-													validators : {
-														notEmpty : {
-															message : '姓名不能为空'
-														},
-														stringLength : {
-															min : 1,
-															max : 10,
-															message : '姓名长度必须在1到10之间'
-														}
-													}
-												},
-												taxpay : {
-													validators : {
-														stringLength : {
-															min : 15,
-															max : 20,
-															message : '税号长度必须在15到20之间'
-														}
-													}
-												},
-												tel : {
-													message : 'The phone is not valid',
-													validators : {
-														stringLength : {
-															min : 11,
-															max : 11,
-															message : '请输入11位手机号码'
-														},
-														regexp : {
-															regexp : /^1[3|5|8]{1}[0-9]{9}$/,
-															message : '请输入正确的手机号码'
-														}
-													}
-												},
-												postcode : {
-													message : 'The postcode is not valid',
-													validators : {
-														stringLength : {
-															min : 6,
-															max : 6,
-															message : '请输入6位邮编'
-														},
-														regexp : {
-															regexp : /^[1-9][0-9]{5}$/,
-															message : '请输入正确的邮编'
-														}
-													}
-												},
-												IDnumber : {
-													message : 'The IDnumber is not valid',
-													validators : {
-														stringLength : {
-															min : 15,
-															max : 18,
-															message : '请输入15或18位身份证号码'
-														},
-														regexp : {
-															regexp : /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/,
-															message : '请输入正确的身份证号码'
-														}
-													}
-												},
-												qq : {
-													message : 'The qq is not valid',
-													validators : {
-														stringLength : {
-															min : 4,
-															max : 12,
-															message : '请输入4-12位QQ号码'
-														},
-														regexp : {
-															regexp : /^[1-9]\d{4,8}$/,
-															message : '请输入正确的QQ号码'
-														}
-													}
-												}
-											},
-										});
-					});
 </script>
 
 </html>

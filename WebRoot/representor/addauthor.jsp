@@ -109,16 +109,15 @@ select.form-control {
 							<div class="card">
 								<div class="header" style="">
 									<h3 class="title">添加作者</h3>
-									<button class="btn btn-info btn-fill btn-wd" style="float: right;">增加</button>
 								</div>
 								<p></p>
 								<div class="content" id="content">
 									<form action="AddAuthor" method="POST" class="form" style="padding: 20px;" id="form">
-										<input type="hidden" value="<%=session.getAttribute("dis_no")%>" name="dis_no">
+										<input type="hidden" value="<%=request.getParameter("dis_no")%>" name="dis_no">
 										<div class="row">
 											<div class="col-md-2">
 												<div class="form-group">
-													<label>姓名<%=session.getAttribute("dis_no")%></label> <input type="text"
+													<label>姓名</label> <input type="text"
 														class="form-control border-input" placeholder="姓名"
 														name="name">
 												</div>
@@ -148,14 +147,14 @@ select.form-control {
 														name="tel">
 												</div>
 											</div>
-											<div class="col-md-2">
+											<div class="col-md-3">
 												<div class="form-group">
 													<label>电子邮箱</label> <input type="text"
 														class="form-control border-input" placeholder="电子邮箱"
 														name="email">
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-md-2">
 												<div class="form-group">
 													<label>工作单位</label> <input type="text"
 														class="form-control border-input" placeholder="工作单位"
@@ -212,8 +211,6 @@ select.form-control {
 	src="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
 
 <script type="text/javascript">
-	
-	alert("${message}");
 
 	$(document)
 			.ready(

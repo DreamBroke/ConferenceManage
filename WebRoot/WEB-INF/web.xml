@@ -12,6 +12,10 @@
 		<servlet-class>servlet.LoginServlet</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>DeleteAuthorServlet</servlet-name>
+		<servlet-class>servlet.DeleteAuthorServlet</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>ExitServlet</servlet-name>
 		<servlet-class>servlet.ExitServlet</servlet-class>
 	</servlet>
@@ -80,6 +84,10 @@
   <servlet-mapping>
     <servlet-name>AddAuthorServlet</servlet-name>
     <url-pattern>/representor/AddAuthor</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>DeleteAuthorServlet</servlet-name>
+    <url-pattern>/representor/DeleteAuthor</url-pattern>
   </servlet-mapping>
 
 </web-app>

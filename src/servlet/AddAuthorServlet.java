@@ -62,8 +62,8 @@ public class AddAuthorServlet extends HttpServlet {
 		aut.setAut_company(company);
 		aut.setAut_dissertation(Integer.parseInt(dis_no));
 		AuthorDAO.insertAuthor(aut);
-		request.setAttribute("message", "添加成功！");
-		request.getRequestDispatcher("addauthor.jsp").forward(request, response);
+		request.setAttribute("message_author", "添加作者成功！");
+		request.getRequestDispatcher("modifydissertation.jsp").forward(request, response);
 	}
 
 	/**
