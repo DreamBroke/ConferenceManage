@@ -3,13 +3,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-	<!-- <listener>
-		<listener-class>listener.LoginListener</listener-class>
-	</listener> -->
+	<!-- <listener> <listener-class>listener.LoginListener</listener-class> 
+		</listener> -->
 
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DeleteDissertationServlet</servlet-name>
+		<servlet-class>servlet.DeleteDissertationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ModifyAuthorServlet</servlet-name>
+		<servlet-class>servlet.ModifyAuthorServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>DeleteAuthorServlet</servlet-name>
@@ -31,22 +38,26 @@
 		<servlet-name>RegisterValidationServlet</servlet-name>
 		<servlet-class>servlet.RegisterValidationServlet</servlet-class>
 	</servlet>
-  <servlet>
-    <servlet-name>ModifyRepServlet</servlet-name>
-    <servlet-class>servlet.ModifyRepServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>RepassswordServlet</servlet-name>
-    <servlet-class>servlet.RepassswordServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UpdissertationServlet</servlet-name>
-    <servlet-class>servlet.UpdissertationServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>AddAuthorServlet</servlet-name>
-    <servlet-class>servlet.AddAuthorServlet</servlet-class>
-  </servlet>
+	<servlet>
+		<servlet-name>ModifyRepServlet</servlet-name>
+		<servlet-class>servlet.ModifyRepServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RepassswordServlet</servlet-name>
+		<servlet-class>servlet.RepassswordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpdissertationServlet</servlet-name>
+		<servlet-class>servlet.UpdissertationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AddAuthorServlet</servlet-name>
+		<servlet-class>servlet.AddAuthorServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ModifyDissertationServlet</servlet-name>
+		<servlet-class>servlet.ModifyDissertationServlet</servlet-class>
+	</servlet>
 
 
 	<servlet-mapping>
@@ -69,25 +80,37 @@
 		<servlet-name>RegisterValidationServlet</servlet-name>
 		<url-pattern>/RegisterValidation</url-pattern>
 	</servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ModifyRepServlet</servlet-name>
-    <url-pattern>/ModifyRep</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>RepassswordServlet</servlet-name>
-    <url-pattern>/Repasssword</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UpdissertationServlet</servlet-name>
-    <url-pattern>/Updissertation</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>AddAuthorServlet</servlet-name>
-    <url-pattern>/representor/AddAuthor</url-pattern>
-  </servlet-mapping>
-    <servlet-mapping>
-    <servlet-name>DeleteAuthorServlet</servlet-name>
-    <url-pattern>/representor/DeleteAuthor</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ModifyRepServlet</servlet-name>
+		<url-pattern>/ModifyRep</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RepassswordServlet</servlet-name>
+		<url-pattern>/Repasssword</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdissertationServlet</servlet-name>
+		<url-pattern>/Updissertation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddAuthorServlet</servlet-name>
+		<url-pattern>/representor/AddAuthor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteAuthorServlet</servlet-name>
+		<url-pattern>/representor/DeleteAuthor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ModifyAuthorServlet</servlet-name>
+		<url-pattern>/representor/ModifyAuthorServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteDissertationServlet</servlet-name>
+		<url-pattern>/representor/DeleteDissertationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ModifyDissertationServlet</servlet-name>
+		<url-pattern>/representor/ModifyDissertationServlet</url-pattern>
+	</servlet-mapping>
 
 </web-app>

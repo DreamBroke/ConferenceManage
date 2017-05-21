@@ -137,7 +137,7 @@ select.form-control {
 												<td><%=dis.getDis_keyword() %></td>
 												<td><%=RealmDao.getNameByNo("" + dis.getDis_realm())%></td>
 												<td><%=ConditionDAO.getNameByNo("" + dis.getDis_condition())%></td>
-												<td><a class="btn btn-default btn-sm" href="modifydissertation.jsp?dis_no=<%=dis.getDis_no()%>">修改</a>&nbsp&nbsp<button class="btn btn-danger btn-sm" onclick="">删除</button></td>
+												<td><a class="btn btn-default btn-sm" href="modifydissertation.jsp?dis_no=<%=dis.getDis_no()%>">修改</a>&nbsp&nbsp<a class="btn btn-danger btn-sm" href="DeleteDissertationServlet?dis_no=<%=dis.getDis_no() %>" onclick="return deleteDissertation();">删除</a></td>
 											</tr>
 											<%
 												}
@@ -249,6 +249,11 @@ select.form-control {
 			},
 		});
 	});
+	
+	function deleteDissertation(){
+		var flag = confirm("确定删除该篇论文吗？");
+		return flag;
+	}
 </script>
 
 </html>

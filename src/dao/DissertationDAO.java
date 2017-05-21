@@ -29,11 +29,33 @@ public class DissertationDAO {
 				+ str
 				+ "', '"
 				+ format.format(dis.getDis_uptime()) + "')";
-		//System.out.println(sql);
+		// System.out.println(sql);
 		ControlDB.executeUpdate(sql);
 	}
-	
-	public static ArrayList<Dissertation> getDissertationByAuthor(String author){
+
+	public static void updateDissertation(Dissertation dis) {
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String str = dis.getDis_file();
+		str = str.replaceAll("\\\\", "\\\\\\\\");
+		String sql = "UPDATE dissertation SET `dis_title` = '"
+				+ dis.getDis_title() + "', `dis_keyword` = '"
+				+ dis.getDis_keyword() + "', `dis_abstract` = '"
+				+ dis.getDis_abstract() + "', `dis_file` = '"
+						+ str + "', `dis_uptime` = '"
+				+ format.format(dis.getDis_uptime()) + "' WHERE `dis_no` = " + dis.getDis_no();
+		// System.out.println(sql);
+		ControlDB.executeUpdate(sql);
+	}
+
+	public static void deleteDissertationByNo(String no) {
+		String sql = "DELETE FROM `conferencemanage`.`dissertation` WHERE dis_no = '"
+				+ no + "';";
+		String sql2 = "DELETE FROM `conferencemanage`.`author` WHERE aut_dissertation = " + no;
+		ControlDB.executeUpdate(sql);
+		ControlDB.executeUpdate(sql2);
+	}
+
+	public static ArrayList<Dissertation> getDissertationByAuthor(String author) {
 		ArrayList<Dissertation> al = new ArrayList<Dissertation>();
 		ResultSet rs = null;
 		String sql = "select * from dissertation where dis_author = " + author;
@@ -60,8 +82,8 @@ public class DissertationDAO {
 		}
 		return al;
 	}
-	
-	public static Dissertation getDissertationByNo(String no){
+
+	public static Dissertation getDissertationByNo(String no) {
 		Dissertation dis = new Dissertation();
 		ResultSet rs = null;
 		String sql = "select * from dissertation where dis_no = " + no;

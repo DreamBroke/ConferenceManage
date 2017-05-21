@@ -158,7 +158,7 @@ select.form-control {
 										</div>
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>二级领域</label> <select class="form-control" id="realm2"
+												<label>二级领域<span style="color: red;">（提交后不可更改！）</span></label> <select class="form-control" id="realm2"
 													name="realm2">
 													<%
 														ArrayList<Realm> al2 = new ArrayList<Realm>();

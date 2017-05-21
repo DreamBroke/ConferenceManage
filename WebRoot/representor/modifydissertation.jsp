@@ -1,3 +1,4 @@
+<%@page import="dao.ReviewDAO"%>
 <%@page import="dao.AuthorDAO"%>
 <%@page import="models.Author"%>
 <%@page import="dao.RealmDao"%>
@@ -129,11 +130,12 @@ select.form-control {
 										Dissertation dis = DissertationDAO.getDissertationByNo(request
 													.getParameter("dis_no"));
 									%>
-									<form action="" method="POST" id="form">
+									<form enctype="multipart/form-data" action="ModifyDissertationServlet" method="POST" id="form">
 										<div class="row">
+											<input type="hidden" name="no" value="<%=request.getParameter("dis_no")%>">
 											<div class="col-md-5">
 												<div class="form-group">
-													<label>标题</label> <input type="text" disabled="disabled"
+													<label>标题</label> <input type="text"
 														class="form-control border-input" placeholder="Company"
 														name="title" value="<%=dis.getDis_title()%>">
 												</div>
@@ -166,6 +168,18 @@ select.form-control {
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
+													<label>修改建议</label>
+													<%
+														String proposal = ReviewDAO.getReviewByrDissertation(dis.getDis_no()+"");
+													%>
+													<textarea rows="5" class="form-control border-input" disabled="disabled"
+														name="proposal"><%=proposal%></textarea>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
 													<label class="control-label">论文上传</label> <input id="file"
 														type="file" name="file">
 												</div>
@@ -189,8 +203,9 @@ select.form-control {
 									for(Author aut : al){
 								%>
 								
-									<form action="" method="POST" id="form2">
+									<form action="ModifyAuthorServlet" method="POST" id="form2">
 										<input type="hidden" value="<%=request.getParameter("dis_no")%>" name="dis_no">
+										<input type="hidden" value="<%=aut.getAut_no()%>" name="no">
 										<div class="row">
 											<div class="col-md-2">
 												<div class="form-group">

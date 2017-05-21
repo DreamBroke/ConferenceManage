@@ -9,7 +9,7 @@ import jdbc.ControlDB;
 
 public class AuthorDAO {
 
-	public static void insertAuthor(Author aut){
+	public static void insertAuthor(Author aut) {
 		String sql = "INSERT INTO `conferencemanage`.`author`(`aut_category`,`aut_name`,`aut_tel`,`aut_email`,`aut_company`,`aut_dissertation`) VALUES ('"
 				+ aut.getAut_category()
 				+ "', '"
@@ -21,11 +21,12 @@ public class AuthorDAO {
 				+ "', '"
 				+ aut.getAut_company()
 				+ "', "
-				+ aut.getAut_dissertation() + ")";
+				+ aut.getAut_dissertation()
+				+ ")";
 		ControlDB.executeUpdate(sql);
 	}
-	
-	public static ArrayList<Author> getAuthorByDissertation(String no){
+
+	public static ArrayList<Author> getAuthorByDissertation(String no) {
 		ArrayList<Author> al = new ArrayList<Author>();
 		ResultSet rs = null;
 		String sql = "select * from author where aut_dissertation = " + no;
@@ -49,8 +50,8 @@ public class AuthorDAO {
 		}
 		return al;
 	}
-	
-	public static Author getAuthorByNo(String no){
+
+	public static Author getAuthorByNo(String no) {
 		Author aut = new Author();
 		ResultSet rs = null;
 		String sql = "select * from author where aut_no = " + no;
@@ -72,9 +73,20 @@ public class AuthorDAO {
 		}
 		return aut;
 	}
-	
-	public static void deleteAuthorByNo(String no){
-		String sql = "DELETE FROM `conferencemanage`.`author` WHERE aut_no = '" + no + "'";
+
+	public static void deleteAuthorByNo(String no) {
+		String sql = "DELETE FROM `conferencemanage`.`author` WHERE aut_no = '"
+				+ no + "'";
 		ControlDB.executeUpdate(sql);
 	}
+
+	public static void updateAuthorByNo(Author aut, String no) {
+		String sql = "UPDATE `author` SET `aut_category` = '"
+				+ aut.getAut_category() + "', `aut_name` = '"
+				+ aut.getAut_name() + "', `aut_tel` = '" + aut.getAut_tel()
+				+ "', `aut_email` = '" + aut.getAut_email()
+				+ "', `aut_company` = '" + aut.getAut_company() + "' WHERE `aut_no` = " + no + ";";
+		ControlDB.executeUpdate(sql);
+	}
+
 }

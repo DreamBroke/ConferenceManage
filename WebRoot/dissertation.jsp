@@ -1,3 +1,5 @@
+<%@page import="dao.RealmDao"%>
+<%@page import="models.Realm"%>
 <%@page import="dao.ConferenceDAO"%>
 <%@page import="models.Conference"%>
 <%@ page language="java" import="java.util.*"
@@ -36,12 +38,13 @@ p {
 	font-size: 18px;
 	line-height: 45px;
 }
-.breadcrumbs-v1 h1, .pull-center {
-    float: none;
-    color: #000;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 45px;
+
+.breadcrumbs-v1 h1,.pull-center {
+	float: none;
+	color: #000;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 45px;
 }
 </style>
 </head>
@@ -66,7 +69,7 @@ p {
 			<div class="row">
 				<div class="col-md-6">
 					<div class="headline">
-						<h2>投稿范围</h2>
+						<h2>投稿指南</h2>
 					</div>
 					<p><%=con.getCon_scopen()%></p>
 				</div>
@@ -78,6 +81,22 @@ p {
 						投稿开始日期：<%=con.getCon_upstartdate()%></p>
 					<p>
 						投稿截止日期：<%=con.getCon_upenddate()%></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="headline">
+						<h2>投稿范围</h2>
+					</div>
+
+					<%
+					ArrayList<Realm> al = RealmDao.getAllFatherRealm();
+					for(Realm r : al){
+					%>
+					<h2><%=r.getRea_name()%></h2>
+					<p><% ArrayList<Realm> son = RealmDao.getSonRealmByNo(r.getRea_no()+""); for(Realm s : son){%><%=s.getRea_name()%>&nbsp&nbsp<%}%></p>
+					<%} %>
+
 				</div>
 			</div>
 		</div>
