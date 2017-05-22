@@ -7,6 +7,7 @@ public class Room {
 	private String roo_description;
 	private int roo_available;
 	private int roo_hotel;
+	private double roo_price;
 	
 	public int getRoo_no() {
 		return roo_no;
@@ -37,6 +38,12 @@ public class Room {
 	}
 	public void setRoo_hotel(int roo_hotel) {
 		this.roo_hotel = roo_hotel;
+	}
+	public double getRoo_price() {
+		return roo_price;
+	}
+	public void setRoo_price(double roo_price) {
+		this.roo_price = roo_price;
 	}
 	
 }

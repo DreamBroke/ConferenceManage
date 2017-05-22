@@ -99,7 +99,7 @@ body,html,#allmap {
 				</div>
 				<div class="col-md-3">
 					<p>
-						<b>缴费详情：</b><br><%=h.getHot_capital()%></p>
+						<b>价格范围：</b><br><%=h.getHot_capital()%></p>
 				</div>
 			</div>
 			<div class="row"

@@ -11,6 +11,10 @@
 		<servlet-class>servlet.LoginServlet</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>AddCheckServlet</servlet-name>
+		<servlet-class>servlet.AddCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>DeleteDissertationServlet</servlet-name>
 		<servlet-class>servlet.DeleteDissertationServlet</servlet-class>
 	</servlet>
@@ -107,6 +111,10 @@
 	<servlet-mapping>
 		<servlet-name>DeleteDissertationServlet</servlet-name>
 		<url-pattern>/representor/DeleteDissertationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddCheckServlet</servlet-name>
+		<url-pattern>/representor/AddCheckServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ModifyDissertationServlet</servlet-name>

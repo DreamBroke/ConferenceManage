@@ -8,15 +8,15 @@ import jdbc.ControlDB;
 import models.Hotel;
 
 public class HotelDAO {
-	
-	public static ArrayList<Hotel> getAllHotel(){
+
+	public static ArrayList<Hotel> getAllHotel() {
 		ResultSet rs = null;
 		String sql = "select * from hotel";
 		rs = ControlDB.executeQuery(sql);
 		ArrayList<Hotel> al = new ArrayList<Hotel>();
 		Hotel h = null;
 		try {
-			while(rs.next()){
+			while (rs.next()) {
 				h = new Hotel();
 				h.setHot_no(rs.getInt("hot_no"));
 				h.setHot_name(rs.getString("hot_name"));
@@ -36,5 +36,21 @@ public class HotelDAO {
 		}
 		return al;
 	}
-	
+
+	public static String getNameByNo(String no) {
+		String str = "";
+		String sql = "select hot_name from `hotel` where hot_no = " + no;
+		ResultSet rs = null;
+		rs = ControlDB.executeQuery(sql);
+		try {
+			while (rs.next()) {
+				str = rs.getString("hot_name");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return str;
+	}
+
 }

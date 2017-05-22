@@ -78,7 +78,7 @@ select.form-control {
 							class="fa fa-file-word-o"></i>
 							<p>管理论文</p>
 					</a></li>
-					<li><a href=""> <i class="fa fa-rmb"></i>
+					<li><a href="check.jsp"> <i class="fa fa-rmb"></i>
 							<p>预订房间</p>
 					</a></li>
 					<li><a href="repassword.jsp"> <i class="fa fa-cog"></i>
