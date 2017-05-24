@@ -23,7 +23,7 @@ public class RoomDAO {
 				r.setRoo_description(rs.getString("roo_description"));
 				r.setRoo_available(rs.getInt("roo_available"));
 				r.setRoo_hotel(rs.getInt("roo_hotel"));
-				r.setRoo_price(rs.getDouble("roo_ price"));
+				r.setRoo_price(rs.getDouble("roo_price"));
 				al.add(r);
 			}
 		} catch (SQLException e) {
